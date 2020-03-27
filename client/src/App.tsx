@@ -6,17 +6,13 @@ import {
 import Header from './components/header/header.component';
 import Home from './pages/home/homepage.component';
 
-import { Container } from './styles/common.styled.component';
-
 function App() {
   return (
     <div>
       <Header />
-      <Container>
-        <Switch>
+      <Switch>
           <Route exact path="/" component={Home} />
-        </Switch>
-      </Container>
+      </Switch>
     </div>
   );
 }
