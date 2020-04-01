@@ -6,7 +6,7 @@ export const MainVisual = styled(ContainerSection)`
     margin: 8rem 5rem 0;
     padding: 0;
     div {
-        height: 75rem;
+        height: 65rem;
         background: url(../images/main-home-img.jpg) 50% 50% no-repeat;
         background-size: cover;
     }
@@ -80,16 +80,36 @@ export const DesignerTitleSquare = styled(SquareTitleBox)`
         font-size: 3.4rem;
     }
     a {
-    font-size: 1.6rem;
-    position: relative;
-    color: ${colors.colorWhite};
-    &:before {
-        content: '';
-        width: 100%;
-        height: 2px;
-        position: absolute;
-        bottom: -5px;
-        background-color: ${colors.colorWhite};
+        color: ${colors.colorWhite};
+        &:before {
+            background-color: ${colors.colorWhite}!important;
+        }
     }
+`;
+
+export const ShopSection = styled(ContainerSection)``;
+
+export const ShopList = styled.ul`
+    li {
+        ul {
+            display: flex;
+            background-color: ${colors.colorBeige};
+            li:first-child {
+                max-width: 50rem;
+                padding: 0 5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                p {
+                    margin: 2rem 0 4rem;
+                }
+            }
+        }
+        &:nth-child(even) {
+            ul {
+                flex-direction: row-reverse;
+            }
+        }
     }
 `;
