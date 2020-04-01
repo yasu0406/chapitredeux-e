@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { colors } from './common.style';
 
 export const ContainerSection = styled.section`
@@ -11,6 +12,19 @@ export const InnerContainer = styled.div`
     width: 100%;
     margin: auto;
     padding: 10rem 0;
+`;
+
+export const Nav = styled.ul`
+    display: flex;
+    li {
+        margin-left: 2rem;
+        &:first-child {
+            margin-left: 0;
+        }
+        a {
+            color: ${colors.colorGold};
+        }
+    }
 `;
 
 export const SquareTitleBox = styled.ul`
@@ -27,4 +41,24 @@ export const SquareTitleBox = styled.ul`
     display: flex;
     flex-direction: column;
     justify-content: center;
+`;
+
+export const LinkButton = styled(Link)`
+    font-size: 1.6rem;
+    position: relative;
+    &:before {
+        content: '';
+        width: 100%;
+        height: 2px;
+        position: absolute;
+        bottom: -5px;
+        background-color: ${colors.colorBlue};
+    }
+`;
+
+export const Logo = styled.h1`
+    img {
+        width: 14rem;
+        height: auto;
+    }
 `;
