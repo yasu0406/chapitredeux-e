@@ -16,6 +16,7 @@ export const InnerContainer = styled.div`
 
 export const Nav = styled.ul`
     display: flex;
+    align-items: baseline;
     li {
         margin-left: 2rem;
         &:first-child {
