@@ -1,115 +1,43 @@
-import React,{ useRef, useState } from 'react';
-import { TweenLite, Expo } from 'gsap';
+import React,{ useRef, useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingBag, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Logo } from '../../styles/common.style.component';
+import { headerAnimation, onClickMenuAnimation, onCloseMenuAnimation } from './header.animation';
 import { HeaderBar,HeaderMenu, Hamburger, LoginCartNav, CopyRight, HeaderSns } from './header.style';
-import { colors } from '../../styles/common.style';
+
 
 const Header = () => {
-    const hamburger = useRef(null);
-    const menu = useRef(null);
-    const logo = useRef(null);
-    const [menuToggle, setMenuToggle] = useState<boolean | null>(true);
-    let navList:Array<Element> = [];
-    let bars:Array<Element> = [];
+    const hamburger = useRef<HTMLElement>(null);
+    const menu = useRef<HTMLElement>(null);
+    const [menuToggle, setMenuToggle] = useState<boolean>(true);
+    let headerElements:Array<HTMLElement> = [];
+    let navList:Array<HTMLElement> = [];
+    let bars:Array<HTMLElement> = [];
     let history = useHistory();
+    useEffect(() => {
+        headerAnimation(headerElements);
+    },[]);
     const changePage = (e: any, destination:string) => {
         e.preventDefault();
-        onCloseMenu();
+        setMenuToggle(true);
+        onCloseMenuAnimation(menu.current, bars, navList);
         setTimeout(() => {
           history.push(destination);
         }, 950);
     };
     const onClickMenu = () => {
         setMenuToggle(!menuToggle);
-        if(menuToggle === true) {
-            TweenLite.to(menu.current, 1, {
-                width: '100%',
-                ease: Expo.easeInOut
-            });
-            TweenLite.to(bars[0], 0.5, {
-                transform: 'rotate(48deg) translateY(7px) translateX(9px)',
-                backgroundColor:'white'
-            });
-            TweenLite.to(bars[1], 0.5, {
-                width: '100%',
-                transform: 'rotate(-48deg)',
-                backgroundColor:'white'
-            });
-            TweenLite.to(bars[2], 0.5, {
-                opacity: 0
-            });
-            TweenLite.to(navList[0], 0.5, {
-                delay: 1,
-                transform: 'translateY(0)',
-            });
-            TweenLite.to(navList[1], 0.5, {
-                delay: 1.3,
-                transform: 'translateY(0)'
-            });
-            TweenLite.to(navList[2], 0.5, {
-                delay: 1.6,
-                transform: 'translateY(0)'
-            });
-            TweenLite.to(navList[3], 0.5, {
-                delay: 1.8,
-                transform: 'translateY(0)'
-            });
-            TweenLite.to(navList[4], 0.5, {
-                delay: 2,
-                transform: 'translateY(0)'
-            });
+        if(menuToggle) {
+            onClickMenuAnimation(menu.current, bars, navList);
         } else {
-            onCloseMenu();
+            onCloseMenuAnimation(menu.current, bars, navList);
         }        
-    }
-    const onCloseMenu = () => {
-        setMenuToggle(true);
-        TweenLite.to(navList[0], 0.5, {
-            transform: 'translateY(100%)'
-        });
-        TweenLite.to(navList[1], 0.5, {
-            delay: 0.2,
-            transform: 'translateY(100%)'
-        });
-        TweenLite.to(navList[2], 0.5, {
-            delay: 0.4,
-            transform: 'translateY(100%)'
-        });
-        TweenLite.to(navList[3], 0.5, {
-            delay: 0.6,
-            transform: 'translateY(100%)'
-        });
-        TweenLite.to(navList[4], 0.5, {
-            delay: 0.8,
-            transform: 'translateY(100%)'
-        });
-        TweenLite.to(menu.current, 0.5, {
-            delay: 1,
-            width: 0,
-            ease: Expo.easeInOut
-        });
-        TweenLite.to(bars[0], 0.5, {
-            delay: 1,
-            transform: 'unset',
-            backgroundColor:colors.colorBlue
-        });
-        TweenLite.to(bars[1], 0.5, {
-            delay: 1,
-            width: '70%',
-            transform: 'unset',
-            backgroundColor:colors.colorBlue
-        });
-        TweenLite.to(bars[2], 0.5, {
-            delay: 1,
-            opacity: 1
-        });
     }
     return(
         <>
-        <HeaderBar>
+        <HeaderBar ref={(e:Element) => { e !== null && headerElements.push(e) }}>
             <Hamburger className='hamburger' onClick={() => {onClickMenu()}} ref={hamburger}>
                 <span ref={(e) => { e !== null && bars.push(e) }}></span>
                 <span ref={(e) => { e !== null && bars.push(e) }}></span>
@@ -118,36 +46,36 @@ const Header = () => {
             <HeaderMenu ref={menu}>
                 <menu>
                     <li>
-                        <a onClick={(e) => changePage(e, `/works`)} ref={(e) => { e !== null && navList.push(e) }}>Home</a>
+                        <a onClick={(e) => changePage(e, `/`)} ref={(e) => { e !== null && navList.push(e) }}>Home</a>
                     </li>
                     <li>
-                        <a onClick={e => changePage(e, `/works`)} ref={(e) => { e !== null && navList.push(e) }}>About</a>
+                        <a onClick={e => changePage(e, `/about`)} ref={(e) => { e !== null && navList.push(e) }}>About</a>
                     </li>
                     <li>
-                        <a onClick={e => changePage(e, `/works`)} ref={(e) => { e !== null && navList.push(e) }}>Collection</a>
+                        <a onClick={e => changePage(e, `/Collection`)} ref={(e) => { e !== null && navList.push(e) }}>Collection</a>
                     </li>
                     <li>
-                        <a onClick={e => changePage(e, `/works`)} ref={(e) => { e !== null && navList.push(e) }}>Blog</a>
+                        <a onClick={e => changePage(e, `/blog`)} ref={(e) => { e !== null && navList.push(e) }}>Blog</a>
                     </li>
                     <li>
-                        <a onClick={e => changePage(e, `/works`)} ref={(e) => { e !== null && navList.push(e) }}>Contact</a>
+                        <a onClick={e => changePage(e, `/contact`)} ref={(e) => { e !== null && navList.push(e) }}>Contact</a>
                     </li>
                 </menu>
             </HeaderMenu>
             <Logo><a onClick={e => changePage(e, `/works`)}><img src="/images/logo.svg" alt="Logo:Chapitredeux"/></a></Logo>
             <LoginCartNav>
                 <li>
-                    <a onClick={e => changePage(e, `/works`)}><FontAwesomeIcon icon={faFacebookSquare} /></a>
+                    <a onClick={e => changePage(e, `/account`)}><FontAwesomeIcon icon={faUser} /></a>
                 </li>
                 <li>
-                    <a onClick={e => changePage(e, `/works`)}><FontAwesomeIcon icon={faFacebookSquare} /></a>
+                    <a onClick={e => changePage(e, `/cart`)}><FontAwesomeIcon icon={faShoppingBag} /></a>
                 </li>
             </LoginCartNav>
         </HeaderBar>
-        <CopyRight>
+        <CopyRight ref={(e:Element) => { e !== null && headerElements.push(e) }}>
             <p>© 2019 Chapitredeux All Rights Reserved.</p>
         </CopyRight>
-        <HeaderSns>
+        <HeaderSns ref={(e:Element) => { e !== null && headerElements.push(e) }}>
             <li><a href=''><FontAwesomeIcon icon={faFacebookSquare} /></a></li>
             <li><a href=''><FontAwesomeIcon icon={faInstagram} /></a></li>
         </HeaderSns>

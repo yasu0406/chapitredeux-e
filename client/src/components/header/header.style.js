@@ -15,6 +15,7 @@ export const HeaderBar = styled.header`
     align-items: center;
     background-color: ${colors.colorWhite};
     z-index: 100;
+    opacity: 0;
 `;
 
 export const HeaderMenu = styled.nav`
@@ -93,6 +94,9 @@ export const Hamburger = styled.div`
 export const LoginCartNav = styled(Nav)`
     position: absolute;
     right: 2rem;
+    a {
+        font-size: 1.8rem;
+    }
 `;
 
 export const CopyRight = styled.div`
@@ -102,6 +106,7 @@ export const CopyRight = styled.div`
     bottom: 0;
     writing-mode: vertical-rl;
     text-align: center;
+    opacity: 0;
     p {
         font-size: 1rem;
     }
@@ -114,6 +119,7 @@ export const HeaderSns = styled.ul`
     top: 0;
     right: 1.2rem;
     bottom: 0;
+    opacity: 0;
     li {
         &:first-child {
             margin-bottom: 1rem;

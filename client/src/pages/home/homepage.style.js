@@ -3,8 +3,11 @@ import { colors } from '../../styles/common.style';
 import { ContainerSection, SquareTitleBox, InnerContainer } from '../../styles/common.style.component';
 
 export const MainVisual = styled(ContainerSection)`
+    width:0;
     margin: 8rem 5rem 0;
     padding: 0;
+    opacity: 0;
+    transform: translate(0px, 50px);
     div {
         height: 65rem;
         background: url(../images/main-home-img.jpg) 50% 50% no-repeat;
@@ -29,6 +32,10 @@ export const AboutTextBox = styled.div`
     width: 100%;
     margin: auto;
     text-align: center;
+    h2,p {
+        opacity: 0;
+        transform: translate(0px, 50px);
+    }
     p {
         margin-top: 2rem; 
     }
@@ -59,11 +66,17 @@ export const DesignerSection = styled(ContainerSection)`
 export const DesignerInnerContainer = styled(InnerContainer)`
     max-width: 40rem;
     position: relative;
+    > p {
+        opacity: 0;
+        transform: translate(0px, 50px);
+    }
 `;
 
 export const DesignerTitleSquare = styled(SquareTitleBox)`
     left: -23rem;
     right: unset;
+    opacity: 0;
+    transform: translate(0px, 50px);
     li:nth-child(2) {
         margin: 2rem 0 4rem;
     }
@@ -94,6 +107,8 @@ export const ShopList = styled.ul`
         ul {
             display: flex;
             background-color: ${colors.colorBeige};
+            opacity: 0;
+            transform: translate(0px, 50px);
             li:first-child {
                 max-width: 50rem;
                 padding: 0 5rem;
