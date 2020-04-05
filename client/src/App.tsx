@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import Header from './components/header/header.component';
 import Home from './pages/home/homepage.component';
+import About from './pages/about/about.component';
 import Footer from './components/footer/footer.component';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
       </Switch>
       <Footer />
     </div>
