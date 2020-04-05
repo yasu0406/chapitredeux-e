@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faShippingFast, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { Logo, Nav } from '../../styles/common.style.component';
-import { FooterInner, FooterTop, FooterBottom, FooterSns } from './footer.style';
+import { FooterInner, FooterTop, FooterBottom, FooterSns, FooterNav } from './footer.style';
 
 const Footer = () => {
     return(
@@ -13,13 +13,13 @@ const Footer = () => {
                 <FooterInner>
                     <ul>
                         <li>
-                        <FontAwesomeIcon icon={faShoppingCart} />Safe shopping<br />Buy with confidence
+                        <FontAwesomeIcon icon={faShoppingCart} /><p>Safe shopping<br />Buy with confidence</p>
                         </li>
                         <li>
-                        <FontAwesomeIcon icon={faShippingFast} />Fast shipping<br />Get your product fast
+                        <FontAwesomeIcon icon={faShippingFast} /><p>Fast shipping<br />Get your product fast</p>
                         </li>
                         <li>
-                        <FontAwesomeIcon icon={faThumbsUp} />Satisfaction guarantee<br />Or get your money back
+                        <FontAwesomeIcon icon={faThumbsUp} /><p>Satisfaction guarantee<br />Or get your money back</p>
                         </li>
                     </ul>
                 </FooterInner>
@@ -31,7 +31,7 @@ const Footer = () => {
                             <Logo><Link to='/'><img src='/images/logo.svg' alt='Logo:Chapitredeux'/></Link></Logo>
                         </li>
                         <li>
-                            <Nav>
+                            <FooterNav>
                                 <li>
                                     <Link to='/'>Home</Link>
                                 </li>
@@ -47,7 +47,7 @@ const Footer = () => {
                                 <li>
                                     <Link to='/contact'>Contact</Link>
                                 </li>
-                            </Nav>
+                            </FooterNav>
                         </li>
                         <li>
                             <FooterSns>
