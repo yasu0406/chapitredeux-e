@@ -37,7 +37,7 @@ const Header = () => {
     }
     return(
         <>
-        <HeaderBar ref={(e:Element) => { e !== null && headerElements.push(e) }}>
+        <HeaderBar ref={(e:HTMLElement) => { e !== null && headerElements.push(e) }}>
             <Hamburger className='hamburger' onClick={() => {onClickMenu()}} ref={hamburger}>
                 <span ref={(e) => { e !== null && bars.push(e) }}></span>
                 <span ref={(e) => { e !== null && bars.push(e) }}></span>
@@ -72,10 +72,10 @@ const Header = () => {
                 </li>
             </LoginCartNav>
         </HeaderBar>
-        <CopyRight ref={(e:Element) => { e !== null && headerElements.push(e) }}>
+        <CopyRight ref={(e:HTMLElement) => { e !== null && headerElements.push(e) }}>
             <p>© 2019 Chapitredeux All Rights Reserved.</p>
         </CopyRight>
-        <HeaderSns ref={(e:Element) => { e !== null && headerElements.push(e) }}>
+        <HeaderSns ref={(e:HTMLElement) => { e !== null && headerElements.push(e) }}>
             <li><a href=''><FontAwesomeIcon icon={faFacebookSquare} /></a></li>
             <li><a href=''><FontAwesomeIcon icon={faInstagram} /></a></li>
         </HeaderSns>

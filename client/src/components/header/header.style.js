@@ -76,6 +76,14 @@ export const Hamburger = styled.div`
     &:hover {
         width:5.5rem;
     }
+    @media screen and (max-width: 1024px) {
+        width:7.5rem;
+        top: 3rem;
+    }
+    @media screen and (max-width: 468px) {
+        width: 10rem;
+        top: 2rem;
+    }
     span {
         width:100%;
         height:3px;
@@ -96,22 +104,29 @@ export const LoginCartNav = styled(Nav)`
     right: 2rem;
     a {
         font-size: 1.8rem;
+        @media screen and (max-width: 1024px) {
+            font-size: 3.6rem;
+        }
     }
 `;
 
 export const CopyRight = styled.div`
     position: fixed;
-    left: 1.08%;
     top: 0px;
+    left: 1.08%;
     bottom: 0;
     writing-mode: vertical-rl;
     text-align: center;
     opacity: 0;
+    @media screen and (max-width:1024px) {
+        top: 26%;
+        left: 2.08%;
+        bottom: unset;
+    }
     p {
         font-size: 1rem;
     }
 `;
-
 export const HeaderSns = styled.ul`
     height: fit-content;
     margin: auto;
@@ -120,6 +135,10 @@ export const HeaderSns = styled.ul`
     right: 1.2rem;
     bottom: 0;
     opacity: 0;
+    @media screen and (max-width:1024px) {
+        top: 32%;
+        bottom: unset;
+    }
     li {
         &:first-child {
             margin-bottom: 1rem;

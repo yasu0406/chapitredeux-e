@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import { colors } from '../../styles/common.style';
 
-export const headerAnimation = (headerElements) => {
+export const headerAnimation = (headerElements: any) => {
     gsap.fromTo(headerElements, {
         opacity: 0,
         y: 50,
@@ -14,7 +14,7 @@ export const headerAnimation = (headerElements) => {
     });
 }
 
-export const onClickMenuAnimation = (menu, bars, navList) => {
+export const onClickMenuAnimation = (menu: any, bars: any, navList: any) => {
     gsap.to(menu, {
         duration: 1,
         width: '100%',
@@ -62,7 +62,7 @@ export const onClickMenuAnimation = (menu, bars, navList) => {
     });
 };
 
-export const onCloseMenuAnimation = (menu, bars, navList) => {
+export const onCloseMenuAnimation = (menu: any, bars: any, navList: any) => {
     gsap.to(navList[0], {
         duration: 0.5,
         transform: 'translateY(100%)'
