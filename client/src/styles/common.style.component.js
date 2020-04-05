@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { colors } from './common.style';
 
 export const ContainerSection = styled.section`
-    margin: 0 5rem;
     padding: 10rem 0;
 `;
 
@@ -58,8 +57,17 @@ export const LinkButton = styled(Link)`
 `;
 
 export const Logo = styled.h1`
+    @media screen and (max-width: 468px) {
+        margin-top: 2rem;
+    }
     img {
         width: 14rem;
         height: auto;
+        @media screen and (max-width: 1024px) {
+            width: 20rem;
+        }
+        @media screen and (max-width: 468px) {
+            width: 30rem;
+        }
     }
 `;
