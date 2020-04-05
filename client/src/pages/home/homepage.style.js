@@ -4,7 +4,7 @@ import { ContainerSection, SquareTitleBox, InnerContainer } from '../../styles/c
 
 export const MainVisual = styled(ContainerSection)`
     width:0;
-    margin: 8rem 5rem 0;
+    margin: 5rem 5rem 10rem;
     padding: 0;
     opacity: 0;
     transform: translate(0px, 50px);
@@ -65,6 +65,7 @@ export const DesignerSection = styled(ContainerSection)`
 
 export const DesignerInnerContainer = styled(InnerContainer)`
     max-width: 40rem;
+    padding: 10rem 0 0;
     position: relative;
     > p {
         opacity: 0;
@@ -77,6 +78,10 @@ export const DesignerTitleSquare = styled(SquareTitleBox)`
     right: unset;
     opacity: 0;
     transform: translate(0px, 50px);
+    @media screen and (max-width: 1024px) {
+        top: 60rem;
+        right: 10rem;
+    }
     li:nth-child(2) {
         margin: 2rem 0 4rem;
     }
@@ -100,7 +105,12 @@ export const DesignerTitleSquare = styled(SquareTitleBox)`
     }
 `;
 
-export const ShopSection = styled(ContainerSection)``;
+export const ShopSection = styled(ContainerSection)`
+    margin: 0 5rem;
+    @media screen and (max-width:1024px) {
+        margin: 20rem 5rem;
+    }
+`;
 
 export const ShopList = styled.ul`
     li {
@@ -119,11 +129,21 @@ export const ShopList = styled.ul`
                 p {
                     margin: 2rem 0 4rem;
                 }
+                @media screen and (max-width:1024px) {
+                    padding: 5rem;
+                    max-width: unset;
+                }
+            }
+            @media screen and (max-width:1024px) {
+                flex-direction: column-reverse;
             }
         }
         &:nth-child(even) {
             ul {
                 flex-direction: row-reverse;
+                @media screen and (max-width:1024px) {
+                    flex-direction: column-reverse;
+                }
             }
         }
     }
