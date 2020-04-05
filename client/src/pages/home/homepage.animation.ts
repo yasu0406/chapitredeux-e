@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import ScrollMagic from "scrollmagic";
 let contoller = new ScrollMagic.Controller;
 
-export const mainVisualAnimation = (mainSection) => {
+export const mainVisualAnimation = (mainSection: any) => {
     gsap.to(mainSection, {
         duration: 1.5,
         delay: 1.5,
@@ -22,9 +22,10 @@ export const mainVisualAnimation = (mainSection) => {
     });
 }
 
-export const designerSectionAnimation = (aboutTextBox) => {
+export const designerSectionAnimation = (aboutTextBox: any) => {
     new ScrollMagic.Scene({
-        triggerElement: aboutTextBox
+        triggerElement: aboutTextBox,
+        reverse:false
         }).on("enter", () => {
             gsap.to((aboutTextBox as HTMLElement).querySelector('h2'),{
                 duration:2,
@@ -39,21 +40,13 @@ export const designerSectionAnimation = (aboutTextBox) => {
                 y:0,
                 ease: 'Expo.easeOut'
             });
-        }).on("leave", () => {
-            gsap.to((aboutTextBox as HTMLElement).querySelector('h2'), {
-                opacity: 0,
-                y: 50
-            });
-            gsap.to((aboutTextBox as HTMLElement).querySelector('p'), {
-                opacity: 0,
-                y: 50
-            });
         }).addTo(contoller);
 };
 
-export const designerAnimation = (designerInnerContainer) => {
+export const designerAnimation = (designerInnerContainer: any) => {
     new ScrollMagic.Scene({
-        triggerElement: designerInnerContainer
+        triggerElement: designerInnerContainer,
+        reverse:false
         }).on("enter", () => {
             gsap.to((designerInnerContainer as HTMLElement).querySelector('p'), {
                 delay: 1,
@@ -69,35 +62,20 @@ export const designerAnimation = (designerInnerContainer) => {
                 y:0,
                 ease: 'Expo.easeOut'
             });
-        }).on("leave", () => {
-            gsap.to((designerInnerContainer as HTMLElement).querySelector('p'), {
-                opacity: 0,
-                y: 50
-            });
-            gsap.to((designerInnerContainer as HTMLElement).querySelector('ul'), {
-                opacity: 0,
-                y: 50
-            });
         }).addTo(contoller);
 };
 
-export const shopListAnimation = (shopList) => {
-    shopList.map(shop => {
-        let list = shop.querySelectorAll('li');
+export const shopListAnimation = (shopList: any) => {
+    shopList.map((shop:any) => {
         new ScrollMagic.Scene({
-            triggerElement: shop
+            triggerElement: shop,
+            reverse:false
             }).on("enter", () => {
                 gsap.to(shop, {
-                    delay: 1,
                     duration:2,
                     opacity: 1,
                     y:0,
                     ease: 'Expo.easeOut'
-                });
-            }).on("leave", () => {
-                gsap.to(shop, {
-                    opacity: 0,
-                    y: 50
                 });
             }).addTo(contoller);
     })
