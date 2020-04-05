@@ -3,7 +3,6 @@ import {
   Switch, 
   Route
 } from 'react-router-dom';
-import gsap from 'gsap';
 import Header from './components/header/header.component';
 import Home from './pages/home/homepage.component';
 import Footer from './components/footer/footer.component';
