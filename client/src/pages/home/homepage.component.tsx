@@ -7,7 +7,7 @@ const Home: React.FC = () => {
     const mainSection = useRef<HTMLElement>(null);
     const aboutTextBox = useRef<HTMLElement>(null);
     const designerInnerContainer = useRef<HTMLAreaElement>(null);
-    const shopList:Array<HTMLElement> = [];
+    const shopList:Array<HTMLUListElement> = [];
     useEffect(() => {
         mainVisualAnimation(mainSection.current);
         srollAnimation();
@@ -42,7 +42,7 @@ texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
         <ShopSection>
             <ShopList>
                 <li>
-                    <ul ref={e => {shopList.push(e)}}>
+                    <ul ref={(e:HTMLUListElement) => {shopList.push(e)}}>
                         <li>
                             <h2>Title</h2>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eius, quaerat fugit ad aperiam, natus blanditiis nemo dolores ex corporis dolorum aut ipsum nostrum quae ab soluta rerum ut sed!</p>
@@ -54,7 +54,7 @@ texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
                     </ul>
                 </li>
                 <li>
-                    <ul ref={e => {shopList.push(e)}}>
+                    <ul ref={(e:HTMLUListElement) => {shopList.push(e)}}>
                         <li>
                             <h2>Title</h2>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eius, quaerat fugit ad aperiam, natus blanditiis nemo dolores ex corporis dolorum aut ipsum nostrum quae ab soluta rerum ut sed!</p>
@@ -66,7 +66,7 @@ texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
                     </ul>
                 </li>
                 <li>
-                    <ul ref={e => {shopList.push(e)}}>
+                    <ul ref={(e:HTMLUListElement) => {shopList.push(e)}}>
                         <li>
                             <h2>Title</h2>
                             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eius, quaerat fugit ad aperiam, natus blanditiis nemo dolores ex corporis dolorum aut ipsum nostrum quae ab soluta rerum ut sed!</p>
