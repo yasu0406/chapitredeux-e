@@ -12,5 +12,5 @@
   },
   "include": [
     "**.ts", "server/Server.ts"
-  ]
+  ],
 }
