@@ -1,122 +1,18 @@
-import React, { useRef, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { collectionAnimation, collectionCloseAnimation } from './collection.animation';
-import { ContainerSection } from '../../styles/common.style.component';
+import React from 'react';
+import Query from '../../components/query';
+import COLLECTION_QUERY from '../../queries/collection/collection';
 import { InnerCollection, CollectionGrid, Categories } from './collection.style';
+import CollectionPreview from '../../components/collection-preview/collection-preview.component';
 
-const Collection = () => {
-    const collection:Array<HTMLLIElement> = [];
-    let history = useHistory();
-    useEffect(() => {
-        collectionAnimation(collection);
-    },[]);
-    const changePage = (e: any, destination:string) => {
-        e.preventDefault();
-        collectionCloseAnimation(collection);
-        setTimeout(() => {
-          history.push(destination);
-        }, 950);
-    };
+const Collection: React.FC = () => {
     return(
         <InnerCollection>
             <CollectionGrid>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to='/collection-detail/test'><img src="/images/collection-thumb-img01.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img02.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img04.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img05.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img01.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img01.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img02.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img04.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img05.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img01.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img01.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img02.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img04.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img05.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img01.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img01.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img02.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img04.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img05.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img01.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
-                <li ref={(e:HTMLLIElement) => {collection.push(e)} }>
-                    <Link to=''><img src="/images/collection-thumb-img03.jpg" alt=""/></Link>
-                </li>
+                <Query query={COLLECTION_QUERY}>
+                {({ data: collection }:any) => {
+                    return <CollectionPreview collection={collection} />;
+                }}
+                </Query>
             </CollectionGrid>
             <Categories>
                 <li><a href="">All</a></li>
