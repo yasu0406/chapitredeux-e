@@ -21,6 +21,9 @@ export const DetailMain = styled.div`
                     top: 0;
                     bottom: unset;
                 }
+                .image-gallery-content .image-gallery-slide .image-gallery-image {
+                    max-height: unset;
+                }
                 .image-gallery-thumbnail.active, .image-gallery-thumbnail:hover, .image-gallery-thumbnail:focus {
                     border: 4px solid ${colors.colorBlue};
                 }

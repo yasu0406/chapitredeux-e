@@ -10,8 +10,8 @@ const CollecitonPreview: React.FC<CollecitonPreviewProps> = ({collection}:any) =
     let history = useHistory();
     useEffect(() => {
         collectionAnimation(collections);
-    },[]);
-    const changePage = (e: any, destination:string) => {
+    },[collections]);
+    const changePage = (e: any, destination:string):void => {
         e.preventDefault();
         collectionCloseAnimation(collections);
         setTimeout(() => {

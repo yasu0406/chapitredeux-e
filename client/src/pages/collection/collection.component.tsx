@@ -15,12 +15,12 @@ const Collection: React.FC = () => {
                 </Query>
             </CollectionGrid>
             <Categories>
-                <li><a href="">All</a></li>
-                <li><a href="">Ring</a></li>
-                <li><a href="">Necklace</a></li>
-                <li><a href="">Pierce</a></li>
-                <li><a href="">Bridal</a></li>
-                <li><a href="">Others</a></li>
+                <li><a href="#">All</a></li>
+                <li><a href="#">Ring</a></li>
+                <li><a href="#">Necklace</a></li>
+                <li><a href="#">Pierce</a></li>
+                <li><a href="#">Bridal</a></li>
+                <li><a href="#">Others</a></li>
             </Categories>
         </InnerCollection>
     );

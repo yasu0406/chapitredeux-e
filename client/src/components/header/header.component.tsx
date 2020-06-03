@@ -52,7 +52,7 @@ const Header = () => {
                         <a onClick={e => changePage(e, `/about`)} ref={(e) => { e !== null && navList.push(e) }}>About</a>
                     </li>
                     <li>
-                        <a onClick={e => changePage(e, `/Collection`)} ref={(e) => { e !== null && navList.push(e) }}>Collection</a>
+                        <a onClick={e => changePage(e, `/collection`)} ref={(e) => { e !== null && navList.push(e) }}>Collection</a>
                     </li>
                     <li>
                         <a onClick={e => changePage(e, `/blog`)} ref={(e) => { e !== null && navList.push(e) }}>Blog</a>
@@ -62,7 +62,7 @@ const Header = () => {
                     </li>
                 </menu>
             </HeaderMenu>
-            <Logo><a onClick={e => changePage(e, `/works`)}><img src="/images/logo.svg" alt="Logo:Chapitredeux"/></a></Logo>
+            <Logo><a onClick={e => changePage(e, `/`)}><img src="/images/logo.svg" alt="Logo:Chapitredeux"/></a></Logo>
             <LoginCartNav>
                 <li>
                     <a onClick={e => changePage(e, `/account`)}><FontAwesomeIcon icon={faUser} /></a>

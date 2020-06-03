@@ -118,11 +118,7 @@ export const CopyRight = styled.div`
     writing-mode: vertical-rl;
     text-align: center;
     opacity: 0;
-    @media screen and (max-width:1024px) {
-        top: 26%;
-        left: 2.08%;
-        bottom: unset;
-    }
+    z-index: 100;
     p {
         font-size: 1rem;
     }
@@ -135,10 +131,7 @@ export const HeaderSns = styled.ul`
     right: 1.2rem;
     bottom: 0;
     opacity: 0;
-    @media screen and (max-width:1024px) {
-        top: 32%;
-        bottom: unset;
-    }
+    z-index: 100;
     li {
         &:first-child {
             margin-bottom: 1rem;

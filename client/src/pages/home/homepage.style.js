@@ -1,29 +1,10 @@
 import styled from 'styled-components';
 import { colors } from '../../styles/common.style';
-import { ContainerSection, SquareTitleBox, InnerContainer } from '../../styles/common.style.component';
+import { ContainerSection, SquareTitleBox, InnerContainer, MainVisual } from '../../styles/common.style.component';
 
-export const MainVisual = styled(ContainerSection)`
-    width:0;
-    margin: 5rem 5rem 10rem;
-    padding: 0;
-    opacity: 0;
-    transform: translate(0px, 50px);
+export const HomeVisual = styled(MainVisual)`
     div {
-        height: 65rem;
         background: url(../images/main-home-img.jpg) 50% 50% no-repeat;
-        background-size: cover;
-    }
-    h1 {
-        height: fit-content;
-        margin: auto;
-        text-align: center;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        color: white;
-        font-size: 9rem;
     }
 `;
 
@@ -105,12 +86,7 @@ export const DesignerTitleSquare = styled(SquareTitleBox)`
     }
 `;
 
-export const ShopSection = styled(ContainerSection)`
-    margin: 0 5rem;
-    @media screen and (max-width:1024px) {
-        margin: 20rem 5rem;
-    }
-`;
+export const ShopSection = styled(ContainerSection)``;
 
 export const ShopList = styled.ul`
     li {

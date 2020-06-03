@@ -1,6 +1,5 @@
 import React from "react";  
 import { useQuery } from "@apollo/react-hooks";
-import { PromiseWithChild } from "child_process";
 
 interface Props {
   id?: string,

@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, FC } from 'react';
 import { LinkButton } from '../../styles/common.style.component';
-import { MainVisual, AboutTextBox, LinksContant, DesignerSection,DesignerInnerContainer, DesignerTitleSquare, ShopSection, ShopList} from './homepage.style';
+import { InnerContainer } from '../../styles/common.style.component';
+import { HomeVisual, AboutTextBox, LinksContant, DesignerSection,DesignerInnerContainer, DesignerTitleSquare, ShopSection, ShopList} from './homepage.style';
 import { mainVisualAnimation, designerSectionAnimation, designerAnimation, shopListAnimation} from './homepage.animation';
 const Home: React.FC = () => {
     const mainImg = useRef<HTMLParagraphElement>(null);
@@ -19,11 +20,11 @@ const Home: React.FC = () => {
     }
     return (
         <>
-        <MainVisual ref={mainSection}>
+        <HomeVisual ref={mainSection}>
             <div>
-                <h1>Jewelry that spells out the drama</h1>
             </div>
-        </MainVisual>
+            <h1>Jewelry that spells out the drama</h1>
+        </HomeVisual>
         <DesignerSection>
             <AboutTextBox ref={aboutTextBox}>
                 <h2>About Chapitredeux</h2>
@@ -40,44 +41,46 @@ texttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttexttext</p>
             </DesignerInnerContainer>
         </DesignerSection>
         <ShopSection>
-            <ShopList>
-                <li>
-                    <ul ref={(e:HTMLUListElement) => {shopList.push(e)}}>
-                        <li>
-                            <h2>Title</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eius, quaerat fugit ad aperiam, natus blanditiis nemo dolores ex corporis dolorum aut ipsum nostrum quae ab soluta rerum ut sed!</p>
-                            <LinkButton to="">SHOP</LinkButton>
-                        </li>
-                        <li>
-                            <img src="/images/shop-engage-img.jpg" alt=""/>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <ul ref={(e:HTMLUListElement) => {shopList.push(e)}}>
-                        <li>
-                            <h2>Title</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eius, quaerat fugit ad aperiam, natus blanditiis nemo dolores ex corporis dolorum aut ipsum nostrum quae ab soluta rerum ut sed!</p>
-                            <LinkButton to="">SHOP</LinkButton>
-                        </li>
-                        <li>
-                            <img src="/images/shop-engage-img.jpg" alt=""/>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <ul ref={(e:HTMLUListElement) => {shopList.push(e)}}>
-                        <li>
-                            <h2>Title</h2>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eius, quaerat fugit ad aperiam, natus blanditiis nemo dolores ex corporis dolorum aut ipsum nostrum quae ab soluta rerum ut sed!</p>
-                            <LinkButton to="">SHOP</LinkButton>
-                        </li>
-                        <li>
-                            <img src="/images/shop-engage-img.jpg" alt=""/>
-                        </li>
-                    </ul>
-                </li>
-            </ShopList>
+            <InnerContainer>
+                <ShopList>
+                    <li>
+                        <ul ref={(e:HTMLUListElement) => {shopList.push(e)}}>
+                            <li>
+                                <h2>Title</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eius, quaerat fugit ad aperiam, natus blanditiis nemo dolores ex corporis dolorum aut ipsum nostrum quae ab soluta rerum ut sed!</p>
+                                <LinkButton to="">SHOP</LinkButton>
+                            </li>
+                            <li>
+                                <img src="/images/shop-engage-img.jpg" alt=""/>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul ref={(e:HTMLUListElement) => {shopList.push(e)}}>
+                            <li>
+                                <h2>Title</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eius, quaerat fugit ad aperiam, natus blanditiis nemo dolores ex corporis dolorum aut ipsum nostrum quae ab soluta rerum ut sed!</p>
+                                <LinkButton to="">SHOP</LinkButton>
+                            </li>
+                            <li>
+                                <img src="/images/shop-engage-img.jpg" alt=""/>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul ref={(e:HTMLUListElement) => {shopList.push(e)}}>
+                            <li>
+                                <h2>Title</h2>
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto eius, quaerat fugit ad aperiam, natus blanditiis nemo dolores ex corporis dolorum aut ipsum nostrum quae ab soluta rerum ut sed!</p>
+                                <LinkButton to="">SHOP</LinkButton>
+                            </li>
+                            <li>
+                                <img src="/images/shop-engage-img.jpg" alt=""/>
+                            </li>
+                        </ul>
+                    </li>
+                </ShopList>
+            </InnerContainer>
         </ShopSection>
         </>
     )
